@@ -71,6 +71,38 @@ li {
   font-size: 16px !important;
 }
 
+/* for my-verification page */
+.selected{
+  color: #4132ef;
+}
+.status-circle {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  margin-left: 15px; /* replaces inline margin */
+}
+.hidden {
+  display: none;
+}
+
+/* optional colors if you want to use classes instead of inline */
+.status-completed {
+  background-color: green;
+}
+
+.status-pending {
+  background-color: yellow;
+}
+
+.status-rejected {
+  background-color: red;
+}
+
+.status-unknown {
+  background-color: gray;
+}
+
 .form-head {
   color: #333333;
   font-size: 24px;
@@ -121,6 +153,10 @@ li {
 
 .text-green {
   color: #06cd98 !important;
+
+}
+span.text-green {
+    font-size: 8px;
 }
 
 .acc-height {
@@ -273,7 +309,7 @@ li {
   height: 40px;
   width: fit-content;
   color: #fff;
-  font-size: 14px;
+  font-size: 10px;
   font-weight: 500;
   border-radius: 20px;
   display: flex;
@@ -361,7 +397,7 @@ li {
   height: 40px;
   width: fit-content;
   color: #00bbd3;
-  font-size: 14px;
+  font-size: 10px;
   font-weight: 500;
   border-radius: 32px;
   display: flex;
@@ -509,7 +545,7 @@ select {
   border-radius: 12px;
   border: 1px solid #c6cbcc !important;
   background: transparent;
-  width: 100%;
+  width: 200px;
   appearance: none;
   background: url(../public/images/select-drop.png) center right 15px no-repeat;
   background-size: 16px 10px;

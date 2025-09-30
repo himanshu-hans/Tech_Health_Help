@@ -121,10 +121,10 @@
 
 .notificationDot {
     position: absolute;
-    top: 2.5rem;
-    left: 2.2rem;
-    width: 10px; /* Size of the dot */
-    height: 10px; /* Size of the dot */
+    top: 2rem;
+    left: 2.4rem;
+    width: 14px; /* Size of the dot */
+    height: 14px; /* Size of the dot */
     background-color: green; /* Color of the dot */
     border-radius: 50%; /* Make it circular */
     border: 2px solid white; /* Optional: border to make the dot stand out more */

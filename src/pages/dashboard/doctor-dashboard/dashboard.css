@@ -1326,8 +1326,8 @@ main{
 }
 
 .recomend .recomendBox .left .docrecomdpart .docImg img{
-    width: 125px;
-    height: 125px;
+    width: 75px;
+    height: 75px;
     border-radius: 50%;
 }
 
@@ -1336,8 +1336,7 @@ main{
     height: 16px;
     object-fit: contain;
     position: absolute;
-    bottom: 0px;
-    right: 13px;
+    top:82px;   right: 13px;
     border-radius: 0;
 }
 
@@ -1349,7 +1348,7 @@ main{
 }
 
 .recomend .recomendBox .left .docrecomdpart .drRdetail .top .verified{
-    font-size: 11px;
+    font-size: 8px;
     color: #000;
     font-weight: 500;
     display: flex;
@@ -1423,12 +1422,12 @@ main{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    gap: 5px;
+    gap: 2px;
 }
 
 .recomend .recomendBox .right .greenimg span{
     color: #388E3C;
-    font-size: 16px;
+    font-size: 8px;
     line-height: 12px;
     font-weight: 500;
     display: block;
@@ -1621,6 +1620,10 @@ main{
 
 .sortSearchArea .search{
     position: relative;
+    /* left: 16px;           */
+       /*done*/
+    
+    
 }
 
 .sortSearchArea .search input{
@@ -1630,8 +1633,7 @@ main{
     border-radius: 30px;
     height: 56px;
     padding: 10px 30px 10px 20px;
-    border: 1px solid #c6cbcc;
-}
+    border: 1px solid #c6cbcc;}            
 
 .sortSearchArea .search a{
     position: absolute;
@@ -1644,7 +1646,7 @@ main{
     background:#fff url(../../../../public/images/select-drop.png) center right 15px no-repeat;
     background-size: 16px 10px;
     width: 200px;
-}
+} 
 
 /* Doctor Appointment Record */
 
@@ -3483,7 +3485,7 @@ margin-bottom: 10px !important;
 /* sakshi */
 .consult{
     color: #00bbd3;
-    font-size: 14px;
+    font-size: 10px;
   font-weight: 500;
 }
 
@@ -3507,6 +3509,12 @@ margin-bottom: 10px !important;
         width: 200px;
         height: 200px;
     }
+
+
+.sortSearchArea .search input{
+        width:149px;
+    }
+
     .doc_public_view .docDetails .doctorsName .img-part {
         width: 200px;
         height: 200px;
@@ -3542,7 +3550,7 @@ margin-bottom: 10px !important;
         width: 100%;
     }
     .recomend .recomendBox .left .docrecomdpart .drRdetail .recondName {
-        font-size: 12px;
+        font-size: 8px;
     }
     .recomend .recomendBox .right{
         flex-direction: row;
@@ -3622,9 +3630,32 @@ margin-bottom: 10px !important;
         font-size: 20px;
         line-height: 24px;
     }
+
 }
 
-@media(min-width:992px) and (max-width:1199px){
+
+
+
+@media(min-width:992px) and (max-width:1200px){
+
+
+
+    .sortSearchArea .search input{
+        width:119px;}
+
+     /* .sortSearchArea .search{
+    position: relative;
+     left: 15px;          
+    
+    
+} */
+
+
+    
+
+
+
+
     .main-content .dash-content .rightContent .rightContentPart {
         grid-template-columns: 1fr;
     }
@@ -3728,7 +3759,7 @@ margin-bottom: 10px !important;
         width: 100%;
     }
     .recomend .recomendBox .left .docrecomdpart .drRdetail .recondName {
-        font-size: 12px;
+        font-size: 8px;
     }
     .recomend .recomendBox .left .docrecomdpart .docImg img {
         width: 50px;
@@ -3873,9 +3904,23 @@ margin-bottom: 10px !important;
     .findDoc{
         grid-template-columns: 3fr 3fr;
     }
+       .consult{
+
+    font-size: 8px;
+
+}
+.gap-2 .transparent_btn {
+  font-size: 8px;
+  padding: 8px 20px;
+}
+
+
 }
 
 @media(max-width:991px){
+    .sortSearchArea .search input{
+        width:100%;} 
+    
     .main-content .dash-content .rightContent {
         width: calc(100% - 0px) !important;
         padding: 20px 10px;
@@ -4420,6 +4465,9 @@ margin-bottom: 10px !important;
     .findDoc{
         grid-template-columns: 3fr;
     }
+
+    .sortSearchArea .search input{
+        width:100%;} 
 }
 
 @media(max-width:480px){

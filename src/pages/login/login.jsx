@@ -31,6 +31,8 @@ const Login = () => {
     Clinic: "/images/login-img/Clinic.svg",
   };
 
+
+  
   const schema = Yup.object().shape({
     email: Yup.string()
       .email("Invalid email format")

@@ -145,24 +145,53 @@ export const fetchDataPublic = async (endpoint) => {
 
 
 // POST request with token
+// export const postData = async (endpoint, body) => {
+//   let token = localStorage.getItem('user_token')
+//   console.log(">>>>>>>>>>>token-post A", token)
+//   try {
+//     const response = await fetch(`${API_URL}/${endpoint}`, {
+//       method: 'POST',
+//       headers: {
+//         'Content-Type': 'application/json',
+//         'Authorization': `Bearer ${token}`
+//       },
+//       body: JSON.stringify(body),
+//     });
+//     if (!response.ok) {
+//       const errorDetails = await response.json();
+//       const errorMessages = Object.values(errorDetails).flat();
+//       throw new Error(errorMessages[0]);
+//     }
+//     return response;
+//   } catch (error) {
+//     console.error('API Error:', error);
+//     throw error;
+//   }
+// };
+
 export const postData = async (endpoint, body) => {
-  let token = localStorage.getItem('user_token')
-  console.log(">>>>>>>>>>>token-post A", token)
+  let token = localStorage.getItem('user_token');
+  console.log(">>>>>>>>>>>token-post A", token);
+
   try {
-    const response = await fetch(`${API_BASE_URL}/${endpoint}`, {
+    const isFormData = body instanceof FormData;
+
+    const response = await fetch(`${API_URL}/${endpoint}`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${token}`,
+        ...(isFormData ? {} : { 'Content-Type': 'application/json' }), 
+        
       },
-      body: JSON.stringify(body),
+      body: isFormData ? body : JSON.stringify(body), 
     });
+
     if (!response.ok) {
       const errorDetails = await response.json();
       const errorMessages = Object.values(errorDetails).flat();
       throw new Error(errorMessages[0]);
     }
-    return await response;
+    return response;
   } catch (error) {
     console.error('API Error:', error);
     throw error;

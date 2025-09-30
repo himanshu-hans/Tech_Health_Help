@@ -98,7 +98,7 @@ export const PatientDrawer = () => {
       <aside
         onMouseEnter={() => setInsideDrawer(true)}
         onMouseLeave={() => setInsideDrawer(false)}
-        className={` ${insideDrawer ? "drawer" : "sidebarClose"}`}
+        className={"drawer"}
       >
         {/* <a ref={sidebarColRef} className="sidebarcol" href="#">
         <img
@@ -602,7 +602,7 @@ export const PatientDrawer = () => {
                   <div class="row g-4">
                     <div class="col-md-12">
                       <div class="form-group text-center">
-                        <h3>{t("support.profile-changeDoctor")}</h3>
+                        <h3>{t("support.profile-changetoDoctor")}</h3>
                       </div>
                     </div>
                     <div class="gap-2 justify-content-center d-flex w-auto mx-auto">

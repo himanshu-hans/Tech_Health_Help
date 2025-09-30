@@ -34,6 +34,9 @@ const FileUpload = ({ label = "Upload File", name, control, src }) => {
               if (file) {
                 setFilePreview(URL.createObjectURL(file)); // Show preview
               }
+              else {
+                setFilePreview(null); // reset if no file selected
+              }
             }}
             ref={field.ref}
           />

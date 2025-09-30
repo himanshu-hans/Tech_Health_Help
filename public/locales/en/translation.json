@@ -624,7 +624,7 @@
     "your-document": "Upload Your Document",
     "support": "Support",
     "profile-changeVerified": "Are you sure you want to proceed as a Patient ?",
-    "profile-changeDoctor": "Are you sure you want to proceed as a Doctor ?",
+    "profile-changetoDoctor":"Are you sure you want to proceed as a Doctor ?",
     "document-verification": "My Document Verification",
     "view": "View",
     "pending": "Pending",
