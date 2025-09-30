@@ -127,7 +127,8 @@ function MyVerification() {
       const response = await postData(`doctors/upload-document/`, formData);
 
       if (!response.ok) {
-        throw new Error("Failed to upload Documents");
+       showToast("Documents upload rejected", "error");
+       // throw new Error("Failed to upload Documents");
       } else {
         setSubmitted(true);
         console.log("formData", formData);
@@ -138,6 +139,7 @@ function MyVerification() {
       }
     } catch (error) {
       console.log(error);
+     
     }
 
     setErrors({
