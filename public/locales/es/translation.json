@@ -628,7 +628,7 @@
   "your-document": "Sube tu documento",
   "support": "Soporte",
   "profile-changeVerified": "¿Está seguro de que desea continuar como paciente?",
-  "profile-changeDoctor": "¿Está seguro de que desea continuar como médico?",
+   "profile-changetoDoctor":"¿Estás seguro de que quieres proceder como doctor?",
   "document-verification": "Verificación de mis documentos",
   "view": "Ver",
   "pending": "Pendiente",

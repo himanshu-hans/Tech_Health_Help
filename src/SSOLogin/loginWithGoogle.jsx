@@ -4,11 +4,11 @@ import { showToast } from "../utils/toast";
 import { useNavigate } from "react-router-dom";
 import { postRequest } from "../hooks/services/services";
 import { useDispatch } from "react-redux";
-import {loginFailure, loginSuccess} from "../redux/actions/authActions"
+import { loginFailure, loginSuccess } from "../redux/actions/authActions";
 
-function LoginWithGoogle({member}) {
+function LoginWithGoogle({ member }) {
   const navigate = useNavigate();
- const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const handleLoginSuccess = async (response) => {
     try {
       const payload = {
@@ -20,7 +20,13 @@ function LoginWithGoogle({member}) {
         let responseData = await apiResponse.json();
         // console.log(responseData);
         localStorage.setItem("user_token", responseData?.token?.access);
-        dispatch(loginSuccess(member, responseData?.token?.access, responseData?.token?.refresh))
+        dispatch(
+          loginSuccess(
+            member,
+            responseData?.token?.access,
+            responseData?.token?.refresh
+          )
+        );
         showToast(responseData?.message, "success");
         if (member === "Doctor") {
           navigate("/dashboard");

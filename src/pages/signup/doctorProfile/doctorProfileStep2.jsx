@@ -71,9 +71,13 @@ const DoctorProfileStep2 = ({ setStateCount }) => {
 
   const onSubmit = async (data) => {
     try {
-      if(!data.uploadPhoto){
-        showToast("please upload profile picture", "info");
-        return;
+      // if(!data.uploadPhoto){
+      //   showToast("please upload profile picture", "info");
+      //   return;
+      // }
+
+           if(data.uploadPhoto){
+formData.append("profile_picture", data.uploadPhoto);
       }
       let lang = data?.languages?.map((item) => item?.id);
 
