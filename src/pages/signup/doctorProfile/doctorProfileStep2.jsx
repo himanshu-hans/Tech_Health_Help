@@ -76,16 +76,18 @@ const DoctorProfileStep2 = ({ setStateCount }) => {
       //   return;
       // }
 
-           if(data.uploadPhoto){
-formData.append("profile_picture", data.uploadPhoto);
-      }
+           
       let lang = data?.languages?.map((item) => item?.id);
 
       const formData = new FormData();
       formData.append("aboutYourself", data.aboutYourself);
-      formData.append("profile_picture", data.uploadPhoto);
+    //  formData.append("profile_picture", data.uploadPhoto);
       formData.append("languages", JSON.stringify(lang));
       formData.append("currency", selectedCurrency);
+    
+      if(data.uploadPhoto){
+        formData.append("profile_picture", data.uploadPhoto);
+      }
 
       const response = await updateFormData("auth/update-profile/", formData);
       if (response.status === 200) {
