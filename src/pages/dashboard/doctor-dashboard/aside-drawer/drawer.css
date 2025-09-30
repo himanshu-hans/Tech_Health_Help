@@ -1,11 +1,12 @@
-aside{
+aside {
     background: #2C2C2C;
-    padding:0 40px 40px 40px;
+    padding: 0 40px 40px 40px;
     width: 300px;
     border-radius: 0px 0px 20px 20px;
+    transition: all 0.3s ease;
 }
 
-aside .sidebarcol{
+aside .sidebarcol {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -15,20 +16,21 @@ aside .sidebarcol{
     width: 60px;
     height: 60px;
     margin-bottom: 50px;
-    margin-left:auto;
+    margin-left: auto;
+    transition: all 0.3s ease;
 }
 
-aside .sidebarcol img{
+aside .sidebarcol img {
     width: 20px;
 }
 
-aside .profileName{
+aside .profileName {
     text-align: center;
     padding: 0 40px;
     transition: 0.2s;
 }
 
-aside .profileName .profImg{
+aside .profileName .profImg {
     width: 90px;
     height: 90px;
     border-radius: 50%;
@@ -39,92 +41,97 @@ aside .profileName .profImg{
     margin: 0 auto;
 }
 
-aside .profileName .profImg img{
+aside .profileName .profImg img {
     width: 85px;
     border-radius: 50%;
 }
 
-aside .profileName h5{
+aside .profileName h5 {
     color: #00BBD3;
     font-size: 20px;
     font-weight: 500;
     margin-top: 10px;
 }
 
-aside nav{
+aside nav {
     margin-top: 40px;
 }
 
-aside nav ul li{
+aside nav ul li {
     margin-bottom: 35px;
 }
 
-aside nav ul li a{
+aside nav ul li a {
     display: flex;
     align-items: center;
     gap: 15px;
 }
 
-aside nav ul li a span{
+aside nav ul li a span {
     color: #fff;
     font-size: 20px;
     font-weight: 500;
+    transition: color 0.3s ease;
 }
 
-aside nav ul li a svg{
+aside nav ul li a svg {
     width: 30px;
     object-fit: contain;
+    transition: stroke 0.3s ease;
 }
 
-aside nav ul li a.active svg path{
+aside nav ul li a.active svg path {
     stroke: #00BBD3;
 }
 
-aside nav ul li a.active span{
+aside nav ul li a.active span {
     color: #00BBD3;
 }
 
-aside nav ul li a:hover svg path{
+aside nav ul li a:hover svg path {
     stroke: #00BBD3;
 }
 
-aside nav ul li a:hover span{
+aside nav ul li a:hover span {
     color: #00BBD3;
 }
 
-aside nav ul hr{
+aside nav ul hr {
     background-color: #fff !important;
     opacity: 1;
     margin-bottom: 25px;
 }
 
-aside.sidebarClose{
+aside.sidebarClose {
     width: 110px;
 }
 
-aside.sidebarClose .sidebarcol{
+aside.sidebarClose .sidebarcol {
     transform: rotate(-180deg);
     transition: 0.2s ease-in;
     margin-left: -15px;
 }
 
-aside.sidebarClose nav ul li a span{
+aside.sidebarClose nav ul li a span {
     display: none;
 }
 
-aside.sidebarClose .profileName{
+aside.sidebarClose .profileName {
     display: none;
     transition: 0.4s;
 }
 
-/* aside.sidebarClose nav ul li a .green-switch{
-    padding-left: 1.5rem;
-} */
-
-@media(min-width:992px) and (max-width:1199px){
-    aside{
+/* Responsive adjustments */
+@media (max-width: 1199px) {
+    aside {
         width: 250px;
-        padding: 40px 20px;
+        padding: 30px 20px 30px 20px;
+    }
+    aside .profileName h5 {
+        font-size: 18px;
+    }
+    aside nav ul li a span {
+        font-size: 18px;
     }
 }
 
@@ -132,17 +139,15 @@ aside.sidebarClose .profileName{
     aside .sidebarcol{
         display: none;
     }
-    aside .profileName{
-        display: none;
-    }
-    aside{
+    aside {
         position: absolute;
         padding: 16px;
-        width: 265px;
+        width: 260px;
         border-radius: 0;
-        transform: translateX(-200%);
+        transform: translateX(-250%);
         height: 90vh;
         z-index: 222;
+        overflow-y: auto;
     }
     aside.sidebarsmall{
         display: block;
@@ -169,6 +174,16 @@ aside.sidebarClose .profileName{
         width: inherit;
     }
     aside.sidebarClose nav ul li a span {
-        display: block;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    aside {
+        width: 200px;
+        padding: 8px;
+    }
+    aside nav ul li a span {
+        font-size: 14px;
     }
 }

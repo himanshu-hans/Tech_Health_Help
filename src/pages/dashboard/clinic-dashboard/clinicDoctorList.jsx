@@ -130,7 +130,7 @@ const countryCodeMap = Object.fromEntries(
             <div class="search">
               <input
                 type="search"
-                placeholder="search"
+                placeholder="Search"
                 value={query}
                 onChange={(e) => setquery(e.target.value)}
                 onKeyDown={handleKeyPress}

@@ -66,6 +66,11 @@ const Signup = () => {
     ),
   });
 
+  const images = {
+    Patient: "/images/login-img/Patient-1.svg",
+    Doctor: "/images/login-img/Doctors-1.svg",
+  };
+
   // assign the default values to the fields
   const getDefaultValues = () => {
     return {
@@ -158,56 +163,85 @@ const Signup = () => {
                       <div className="formArea signupmain">
                         <form onSubmit={handleSubmit(onSubmit)}>
                           <div className="row g-3">
-                            <div className="col-md-6 col-6">
-                              <div
-                                className={`radiotype topRadio ${
-                                  role === "Patient" ? "active" : ""
-                                }`}
-                              >
-                                <Controller
-                                  name="member"
-                                  control={control}
-                                  defaultValue="Patient"
-                                  render={({ field }) => (
-                                    <input
-                                      id="Patient"
-                                      type="radio"
-                                      value="Patient"
-                                      checked={field.value === "Patient"}
-                                      onChange={(e) => {
-                                        field.onChange(e.target.value);
-                                        setRole(e.target.value);
-                                      }}
-                                    />
-                                  )}
+                            <div
+                              className="image-container"
+                              style={{
+                                textAlign: "center",
+                                marginBottom: "20px",
+                              }}
+                            >
+                              {(role === "Patient" || role === "Doctor") && (
+                                <img
+                                  src={images[role]}
+                                  alt={`${role} icon`}
+                                  style={{
+                                    width: "100px",
+                                    height: "100px",
+                                    objectFit: "cover",
+                                    borderRadius: "8px",
+                                  }}
                                 />
-                                <label>{t("login.for_member")}</label>
+                              )}
+                            </div>
+
+                            <div className="toggle-switch-container">
+                              <div className="col-md-6 col-6">
+                                <div
+                                  className={`switch-option radio-btn ${
+                                    role === "Patient" ? "active" : ""
+                                  }`}
+                                >
+                                  <Controller
+                                    name="member"
+                                    control={control}
+                                    defaultValue="Patient"
+                                    render={({ field }) => (
+                                      <input
+                                        id="Patient"
+                                        type="radio"
+                                        value="Patient"
+                                        checked={field.value === "Patient"}
+                                        onChange={(e) => {
+                                          field.onChange(e.target.value);
+                                          setRole(e.target.value);
+                                        }}
+                                      />
+                                    )}
+                                  />
+                                  <label htmlFor="Patient">
+                                    {t("login.for_member")}
+                                  </label>
+                                </div>
+                              </div>
+                              <div className="col-md-6 col-6">
+                                <div
+                                  className={`switch-option radio-btn ${
+                                    role === "Doctor" ? "active" : ""
+                                  }`}
+                                >
+                                  <Controller
+                                    name="member"
+                                    control={control}
+                                    render={({ field }) => (
+                                      <input
+                                        id="Doctor"
+                                        type="radio"
+                                        value="Doctor"
+                                        checked={field.value === "Doctor"}
+                                        onChange={(e) => {
+                                          field.onChange(e.target.value);
+                                          setRole(e.target.value);
+                                        }}
+                                      />
+                                    )}
+                                  />
+                                  <label htmlFor="Doctor">
+                                    {t("login.for_specialist")}
+                                  </label>
+                                </div>
                               </div>
                             </div>
-                            <div className="col-md-6 col-6">
-                              <div
-                                className={`radiotype topRadio ${
-                                  role === "Doctor" ? "active" : ""
-                                }`}
-                              >
-                                <Controller
-                                  name="member"
-                                  control={control}
-                                  render={({ field }) => (
-                                    <input
-                                      type="radio"
-                                      value="Doctor"
-                                      checked={field.value === "Doctor"}
-                                      onChange={(e) => {
-                                        field.onChange(e.target.value);
-                                        setRole(e.target.value);
-                                      }}
-                                    />
-                                  )}
-                                />
-                                <label>{t("login.for_specialist")}</label>
-                              </div>
-                            </div>
+
                             <div className="col-md-6">
                               <div className="form-group">
                                 <label>{t("singup.first_name")}</label>

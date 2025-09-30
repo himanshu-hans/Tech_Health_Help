@@ -137,6 +137,10 @@ li {
 
 .bg-mainblue {
   background: #00bbd3 !important;
+  padding: 5px !important;
+  margin: 5px !important;
+  border-radius: 10px !important;
+  color: #fff;
 }
 
 .text-black {
@@ -260,20 +264,34 @@ span.text-green {
 }
 
 .delete_button {
-  background: #d3d3d3;               /* Light grey background */
-  color: #333;                       /* Dark grey text for accessibility */
-  font-size: 12px;                   /* Smaller font */
-  font-weight: 400;                  /* Lighter weight to deemphasize */
+  /* background: #d3d3d3;            
+  color: #333;                      
+  font-size: 12px;                  
+  font-weight: 400;                 
   border-radius: 20px;
   height: 36px;
   padding: 8px 24px;
-  border: 1px solid #bbb;           /* Softer border */
+  border: 1px solid #bbb;         
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   outline: none;
-  transition: all 0.2s ease;
+  transition: all 0.2s ease; */
+  background: #d3d3d3;
+    color: #333;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 20px;
+    height: 40px;
+    padding: 10px 30px;
+    border: 1px solid #bbb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s ease;
 }
 
 .delete_button:hover {
@@ -690,5 +708,13 @@ textarea {
   }
   .signupTab .formArea {
     padding: 30px 25px !important;
+  }
+  .mint-blue{
+   display: flex;
+   gap: 10px;
+  }
+  .mint-blue a{
+    display: block;
+    width: 125px;
   }
 }

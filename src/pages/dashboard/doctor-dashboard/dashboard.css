@@ -3185,7 +3185,7 @@ main{
   }
 
   .topRadio:hover{
-    background: #00BBD3;
+    background: #fff;
   }
 
   .topRadio:hover label{
@@ -3193,7 +3193,7 @@ main{
   }
 
   .topRadio.active{
-    background: #00BBD3;
+    background: #fff;
   }
 
   .topRadio input{
@@ -3497,7 +3497,7 @@ margin-bottom: 10px !important;
 }
 
 .loginChangeColor .col-md-4:first-child .topRadio.active, .loginChangeColor .col-md-4:first-child:hover .topRadio{
-    background:#8ebeb2 !important;
+    background:#dad6d6 !important;
 }
 
 .loginChangeColor .col-md-4:nth-child(3) .topRadio.active, .loginChangeColor .col-md-4:nth-child(3):hover .topRadio{
