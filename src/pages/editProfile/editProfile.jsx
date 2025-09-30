@@ -561,6 +561,7 @@ const EditProfile = () => {
                     </div>
                   </div>
                 </div>
+                {/* profile view */}
                 <div class="profileViewPrt">
                   <div class="profileViewTop">
                     <a onClick={() => navigate("/doctor/public-view")}>
@@ -835,7 +836,7 @@ const EditProfile = () => {
                   </h3>
                   <a>
                     <img
-                      src="../images/doctor-dashboard/folder.svg"
+                      src="/images/downloaded-icon.svg"
                       onClick={() => setShowModelLicenses(true)}
                     />
                   </a>
@@ -905,7 +906,7 @@ const EditProfile = () => {
                   <div className="">
                     <a href="#" onClick={openSkilAddModal}>
                       <img
-                        src="../images/doctor-dashboard/folder.svg"
+                        src="/images/downloaded-icon.svg"
                         alt="Add"
                       />
                     </a>
@@ -1009,7 +1010,7 @@ const EditProfile = () => {
                   <h3 class="docinfohead">{t("edit-profile.media-digest")}</h3>
                   <a>
                     <img
-                      src="../images/folder.svg"
+                      src="/images/downloaded-icon.svg"
                       onClick={() => setModelOpenMediaDigest(true)}
                     />
                   </a>

@@ -36,7 +36,7 @@ function ConsultationRecordsList() {
 
         <div class="sortSearchArea">
           <div class="search">
-            <input type="search" placeholder="search" />
+            <input type="search" placeholder="Search" />
             <a href="#">
               <img src="../images/search-dark.svg" />
             </a>
@@ -62,7 +62,8 @@ function ConsultationRecordsList() {
                         <div className="col-md-12 d-flex">
                         <div className="img-prt col-md-3 d-flex align-items-center">
                           <img
-                            src={item?.Patient?.profile_picture}
+                            src="/images/patient.svg"
+                            // {item?.Patient?.profile_picture}
                             className="img-fluid"
                             alt="Patient"
                           />

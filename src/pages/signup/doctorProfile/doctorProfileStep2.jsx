@@ -13,7 +13,7 @@ import MultiSelectDropdown from "../../../components/form/multiSelectDropdown";
 import { loginSuccess } from "../../../redux/actions/authActions";
 import { useDispatch, useSelector } from "react-redux";
 import currencyCodes from "currency-codes";
-import TextArea from "../../../components/form/TextArea"
+import TextArea from "../../../components/form/TextArea";
 
 const DoctorProfileStep2 = ({ setStateCount }) => {
   const [selectedCurrency, setSelectedCurrency] = useState("");
@@ -24,6 +24,7 @@ const DoctorProfileStep2 = ({ setStateCount }) => {
 
   const [languageOptions, setLanguageOptions] = useState([]);
   const [currencies, setCurrency] = useState();
+  const [selectedSpecialities, setSelectedSpecialities] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -48,10 +49,12 @@ const DoctorProfileStep2 = ({ setStateCount }) => {
     },
   });
 
-  useEffect(()=>{
-    const filtered = currencyCodes?.data?.filter(item => ['GBP', 'USD', 'EUR'].includes(item?.code));
-    setCurrency(filtered)
-  },[currencyCodes])
+  useEffect(() => {
+    const filtered = currencyCodes?.data?.filter((item) =>
+      ["GBP", "USD", "EUR"].includes(item?.code)
+    );
+    setCurrency(filtered);
+  }, [currencyCodes]);
 
   const handleChange = (event) => {
     const value = event.target.value;
@@ -71,15 +74,15 @@ const DoctorProfileStep2 = ({ setStateCount }) => {
 
   const onSubmit = async (data) => {
     try {
-      if(!data.uploadPhoto){
-        showToast("please upload profile picture", "info");
-        return;
-      }
+      // if(!data.uploadPhoto){
+      //   showToast("Please upload profile picture", "info");
+      //   return;
+      // }
       let lang = data?.languages?.map((item) => item?.id);
 
       const formData = new FormData();
       formData.append("aboutYourself", data.aboutYourself);
-      formData.append("profile_picture", data.uploadPhoto);
+      formData.append("profile_picture", data.uploadPhoto || "");
       formData.append("languages", JSON.stringify(lang));
       formData.append("currency", selectedCurrency);
 
@@ -88,7 +91,7 @@ const DoctorProfileStep2 = ({ setStateCount }) => {
         let responseData = await response.json();
         localStorage.setItem("user_data", JSON.stringify(responseData?.data));
         dispatch(loginSuccess(responseData?.data?.role, token));
-        setStateCount(5)
+        setStateCount(5);
         showToast(responseData?.message, "success");
       }
     } catch (error) {
@@ -162,7 +165,7 @@ const DoctorProfileStep2 = ({ setStateCount }) => {
                       </div>
 
                       {/* Languages */}
-                      <div className="col-md-6">
+                      <div className="col-md-12">
                         <label>{t("singup.languages_lable")}</label>
                         <Controller
                           name="languages"
@@ -178,7 +181,7 @@ const DoctorProfileStep2 = ({ setStateCount }) => {
                           )}
                         />
                       </div>
-                      <div className="col-md-6">
+                      {/* <div className="col-md-6">
                         <label>Currency</label>
                         <select
                           className="form-control border-radus-12 border-gray-300"
@@ -191,6 +194,35 @@ const DoctorProfileStep2 = ({ setStateCount }) => {
                             </option>
                           ))}
                         </select>
+                      </div> */}
+
+                      <div className="col-md-6">
+                        <label>Specialities</label>
+                        {selectedSpecialities.map((value, index) => (
+                          <input
+                            key={index}
+                            type="text"
+                            className="form-control border-radus-12 border-gray-300 mb-2"
+                            value={value}
+                            onChange={(e) => {
+                              const newValues = [...selectedSpecialities];
+                              newValues[index] = e.target.value;
+                              setSelectedSpecialities(newValues);
+                            }}
+                          />
+                        ))}
+                        <button
+                          type="button"
+                          className="btn blue-btn mt-2"
+                          onClick={() =>
+                            setSelectedSpecialities([
+                              ...selectedSpecialities,
+                              "",
+                            ])
+                          }
+                        >
+                          + Add Speciality
+                        </button>
                       </div>
 
                       {/* Submit Button */}

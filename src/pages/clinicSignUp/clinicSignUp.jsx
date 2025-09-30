@@ -43,18 +43,19 @@ function ClinicSignUp() {
     acceptTerms: Yup.boolean().oneOf(
       [true],
       "You must accept the terms and conditions"
-    ), acknowledge: Yup.boolean().oneOf(
-          [true],
-         "You must acknowledge the Patient Bill of Rights and Responsibilities to continue."
-        ),
-         codeOfConduct: Yup.boolean().oneOf(
-          [true],
-         "You must agree to respect the Doctor's Code of Conduct and Responsibilities to proceed."
-        ),
-        MedicalDisciaimer: Yup.boolean().oneOf(
-          [true],
-         "By continuing, I agree that H2.doctor is a digital health platform..."
-        ),
+    ),
+    acknowledge: Yup.boolean().oneOf(
+      [true],
+      "You must acknowledge the Patient Bill of Rights and Responsibilities to continue."
+    ),
+    codeOfConduct: Yup.boolean().oneOf(
+      [true],
+      "You must agree to respect the Doctor's Code of Conduct and Responsibilities to proceed."
+    ),
+    MedicalDisciaimer: Yup.boolean().oneOf(
+      [true],
+      "By continuing, I agree that H2.doctor is a digital health platform..."
+    ),
   });
 
   const {
@@ -80,10 +81,10 @@ function ClinicSignUp() {
         first_name: data?.Clinic_Name,
         confirm_password: data.confirmPassword,
         role: "Clinic",
-        acknowledge:data.acknowledge,
-        code_of_conduct:data.codeOfConduct,
-        terms_and_condition:data.acceptTerms,
-        medical_disclaimer:data.MedicalDisciaimer,
+        acknowledge: data.acknowledge,
+        code_of_conduct: data.codeOfConduct,
+        terms_and_condition: data.acceptTerms,
+        medical_disclaimer: data.MedicalDisciaimer,
       };
       const response = await postRequest("auth/signup/", payload);
       if (response?.status === 201) {
@@ -122,6 +123,22 @@ function ClinicSignUp() {
                     </div>
                     <form onSubmit={handleSubmit(onSubmit)}>
                       <div className="row g-4">
+                        <div
+                          className="image-container"
+                          style={{ textAlign: "center", marginBottom: "0px" }}
+                        >
+                          <img
+                            src="/images/login-img/Clinic.svg"
+                            alt="Clinic icon"
+                            style={{
+                              width: "100px",
+                              height: "100px",
+                              objectFit: "cover",
+                              borderRadius: "8px",
+                            }}
+                          />
+                        </div>
+
                         <div className="col-md-12">
                           <div className="form-group">
                             <label>{t("clinic-signup.clinic-name")}</label>

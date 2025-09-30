@@ -86,7 +86,7 @@ const DoctorSupport = () => {
           <div className="doctorsupportadd">
             <img
               width="40px"
-              src="../images/folder.svg"
+              src="/images/downloaded-icon.svg"
               onClick={() => setAddDoctorModel(true)}
             />
           </div>

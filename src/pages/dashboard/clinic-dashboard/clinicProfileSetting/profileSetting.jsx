@@ -78,7 +78,7 @@ const ProfileSetting = () => {
 
                 <div class="sortSearchArea mb-0">
                   <div class="search">
-                    <input type="search" placeholder="search" />
+                    <input type="search" placeholder="Search" />
                     <a href="#">
                       <img src="../images/search-dark.svg" />
                     </a>
@@ -113,14 +113,15 @@ const ProfileSetting = () => {
             </div>
             <div class="col-md-12">
               <div class="settingBox bg-white border-radius-20 padding-20">
-                <h3 class="text-darkgreen mb-5">{t("log-out.title")}</h3>
+                <h3 class="text-darkgreen mb-5">{t("c")}</h3>
                 <div class="row g-4">
-                  <div class="col-md-12">
-                    <p class="mb-4">
-                      {t("log-out.title")}{" "}
+                  <div class="col-md-6">
+                    <p class="mb-4 d-flex">
+                      {/* {t("log-out.title")}{" "} */}
+                      {/* <span>LogOut</span> */}
                       <a
                         href="#"
-                        class="border-radius-20 bg-mainblue py-3 px-4 text-white"
+                        class="bg-mainblue"
                         onClick={logout}
                       >
                         <img

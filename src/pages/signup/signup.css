@@ -81,7 +81,7 @@
 }
 
 .signupTab .formArea form .radiotype label{
-    color: #8d8d8d;
+    color: #696868;
 }
 
 .signupTab .formArea form p{
@@ -194,6 +194,78 @@
     padding: 10px 20px;
 }
 
+
+.role-selector {
+  display: flex;
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.role-option.toggle-radio {
+  flex: 1;
+  text-align: center;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.role-option.toggle-radio.selected {
+  background: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.role-option input[type="radio"] {
+  display: none;
+}
+
+
+.toggle-switch-container {
+  display: flex;
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 4px;
+  width: 100%;
+}
+
+.switch-option.radio-btn {
+  flex: 1;
+  text-align: center;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+}
+
+.switch-option.radio-btn.active {
+  background: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  color: #333;
+  font-weight: 600;
+}
+
+.switch-option.radio-btn:hover:not(.active) {
+  background: rgba(255,255,255,0.5);
+}
+
+.switch-option input[type="radio"] {
+  display: none;
+}
+
+.switch-option label {
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  margin: 0;
+}
+
+
+
+
 .signupTab .formArea form .social > div > div > div > div{
     border: 1px solid #333333 !important;
     width: fit-content;
@@ -213,6 +285,87 @@
 .workinghours-align{
     padding-top: 1.7rem !important;
 }
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 5;
+}
+
+.image-container img {
+  width: 100px !important;
+  height: 100px !important;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border: 2px solid #f0f0f0;
+}
+
+/* Responsive adjustments for image */
+@media(max-width:767px){
+  .image-container {
+    margin-bottom: 15px;
+  }
+  
+  .image-container img {
+    width: 60px !important;
+    height: 45px !important;
+  }
+
+  
+  .role-selector,
+  .toggle-switch-container {
+    flex-direction: row; 
+    padding: 2px;
+    gap: 2px;
+  }
+
+  .role-option.toggle-radio,
+  .switch-option.radio-btn {
+    padding: 6px;
+    font-size: 12px;
+  }
+}
+
+/* Style for the radio buttons */
+/* .radiotype input[type="radio"] {
+  display: none; 
+}
+
+.radiotype label {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.radiotype.active label {
+  background-color: #4CAF50; 
+  color: white;
+}
+
+.radiotype label:hover {
+  background-color: #e0e0e0;
+}
+
+.radiotype label {
+  background-color: #eaeaea;
+}
+
+.radiotype label {
+  transition: background-color 0.3s ease;
+}
+
+.radiotype.active label {
+  border: 2px solid #4CAF50;
+} */
+
 
 @media (min-width: 1200px) and (max-width: 1500px), (max-height: 800px) { 
     .signupTab{
@@ -261,7 +414,41 @@
         height: 100%;
         padding: 20px 0;
     }
+
+  .role-selector {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important; 
+    gap: 0 !important; 
+  }
+
+  .role-selector .col-md-4.col-6 {
+    flex: 1 1 0 !important; 
+    max-width: none !important;
+    padding-left: 2px !important; 
+    padding-right: 2px !important;
+  }
+
+  .role-option.toggle-radio,
+  .switch-option.radio-btn {
+    width: 100% !important; 
+    text-align: center;
+    padding: 5px;          
+    box-sizing: border-box;   
+  }
+
+  .role-option.toggle-radio label.main-text {
+    padding: 5px 0 !important; 
+    margin: 0 !important;
+  }
+  .main-text{
+    color: #666666;
+    font-size: 14px;
+    font-weight: 400;
+    display: block;
+  }
 }
+
 
 @media(min-width:320px) and (max-width:366px){
     #loginTab {
@@ -269,3 +456,4 @@
             padding-bottom: 25px;
         }
 }
+
