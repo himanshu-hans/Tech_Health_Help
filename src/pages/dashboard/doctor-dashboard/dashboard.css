@@ -1633,12 +1633,7 @@ main{
     border-radius: 30px;
     height: 56px;
     padding: 10px 30px 10px 20px;
-    border: 1px solid #c6cbcc;
-    margin-left: 78px;
-    /* width: 230px;        */
-               /*done*/
-    
-}
+    border: 1px solid #c6cbcc;}            
 
 .sortSearchArea .search a{
     position: absolute;
@@ -1651,7 +1646,7 @@ main{
     background:#fff url(../../../../public/images/select-drop.png) center right 15px no-repeat;
     background-size: 16px 10px;
     width: 200px;
-}
+} 
 
 /* Doctor Appointment Record */
 
@@ -3516,17 +3511,10 @@ margin-bottom: 10px !important;
     }
 
 
-    /* my code */
-
-    .sortSearchArea .search input{
-        width:223px
+.sortSearchArea .search input{
+        width:149px;
     }
-    .sortSearchArea .search{
-    
-    left: 17px;             /*done*/
-    
-    
-}
+
     .doc_public_view .docDetails .doctorsName .img-part {
         width: 200px;
         height: 200px;
@@ -3648,19 +3636,21 @@ margin-bottom: 10px !important;
 
 
 
-@media(min-width:992px) and (max-width:1199px){
+@media(min-width:992px) and (max-width:1200px){
 
-     .sortSearchArea .search{
+
+
+    .sortSearchArea .search input{
+        width:119px;}
+
+     /* .sortSearchArea .search{
     position: relative;
      left: 15px;          
     
     
-}
+} */
 
-.sortSearchArea .search input{
-    padding: 10px 30px 10px 20px; 
-     width: 186px;    
-    }    
+
     
 
 
@@ -3914,8 +3904,6 @@ margin-bottom: 10px !important;
     .findDoc{
         grid-template-columns: 3fr 3fr;
     }
-
-/* mine code */
        .consult{
 
     font-size: 8px;
@@ -3930,6 +3918,9 @@ margin-bottom: 10px !important;
 }
 
 @media(max-width:991px){
+    .sortSearchArea .search input{
+        width:100%;} 
+    
     .main-content .dash-content .rightContent {
         width: calc(100% - 0px) !important;
         padding: 20px 10px;
@@ -4474,6 +4465,9 @@ margin-bottom: 10px !important;
     .findDoc{
         grid-template-columns: 3fr;
     }
+
+    .sortSearchArea .search input{
+        width:100%;} 
 }
 
 @media(max-width:480px){
