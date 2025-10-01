@@ -33,48 +33,68 @@ const ResetPassword = () => {
       ...formData,
       [name]: value,
     });
+      setErrors({
+      ...errors,[name]:""
+    });
   };
 
-  // Handle password reset (submit manually)
-  const handleResetPassword = async (e) => {
-    e.preventDefault();
-    // Validate the form manually using Yup
-    const schema = Yup.object().shape({
-      currentPassword: Yup.string().required("Field is required"),
-      newPassword: Yup.string()
-        .required("Field is required")
-        .min(8, "Password must be at least 8 characters long")
-        .matches(
-          /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/,
-          "Must contain at least one uppercase, one lowercase, one number, and one special character"
-        ),
-      confirmPassword: Yup.string()
-        .required("Field is required")
-        .oneOf([Yup.ref("newPassword"), null], "Passwords must match"),
+
+const handleResetPassword = async (e) => {
+  e.preventDefault();
+
+  const schema = Yup.object().shape({
+    currentPassword: Yup.string().required("Field is required"),
+    newPassword: Yup.string()
+      .required("Field is required")
+      .min(8, "Password must be at least 8 characters long")
+      .matches(
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/,
+        "Must contain at least one uppercase, one lowercase, one number, and one special character"
+      )
+      .notOneOf(
+        [Yup.ref("currentPassword")],
+        "New password must be different from current password"
+      ),
+    confirmPassword: Yup.string()
+      .required("Field is required")
+      .oneOf([Yup.ref("newPassword"), null], "Passwords must match"),
+  });
+
+  try {
+    await schema.validate(formData, { abortEarly: false });
+    setErrors({
+      currentPassword: "",
+      newPassword: "",
+      confirmPassword: "",
     });
 
-    try {
-      await schema.validate(formData, { abortEarly: false });
+    const payload = {
+      old_password: formData.currentPassword,
+      new_password: formData.newPassword,
+    };
 
-      // If validation passes, submit the data
-      const payload = {
-        old_password: formData.currentPassword,
-        new_password: formData.newPassword,
-      };
-      const response = await postData(
-        "auth/change-password/",
-        payload
-      );
+    const response = await postData("auth/change-password/", payload);
 
-      if (response?.status === 200) {
-        let responseData = await response.json();
-        setModelOpen(true);
-        showToast(responseData?.message, "success");
-      }
-    } catch (err) {
-      showToast(err.message, "error");
+    if (response?.status === 200) {
+      let responseData = await response.json();
+      setModelOpen(true);
+      showToast(responseData?.message, "success");
     }
-  };
+  } 
+  catch (err) {
+    if (err.inner) {
+      // Collect field-specific errors
+      const newErrors = {};
+      err.inner.forEach((validationError) => {
+        newErrors[validationError.path] = validationError.message;
+        showToast(validationError.message, "error"); 
+      });
+      setErrors(newErrors);
+    } else {
+      showToast(err.message, "error"); 
+    }
+  }
+};
 
   return (
     <div className="col-md-6">
