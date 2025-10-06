@@ -836,7 +836,9 @@ const EditProfile = () => {
                   </h3>
                   <a>
                     <img
-                      src="/images/downloaded-icon.svg"
+                      src="/images/iconamoon_folder-add-thin.svg"
+                      alt="Add"
+                      style={{ width: "30px", height: "30px" }}
                       onClick={() => setShowModelLicenses(true)}
                     />
                   </a>
@@ -906,8 +908,9 @@ const EditProfile = () => {
                   <div className="">
                     <a href="#" onClick={openSkilAddModal}>
                       <img
-                        src="/images/downloaded-icon.svg"
+                        src="/images/iconamoon_folder-add-thin.svg"
                         alt="Add"
+                        style={{ width: "30px", height: "30px" }}
                       />
                     </a>
                   </div>
@@ -1010,7 +1013,9 @@ const EditProfile = () => {
                   <h3 class="docinfohead">{t("edit-profile.media-digest")}</h3>
                   <a>
                     <img
-                      src="/images/downloaded-icon.svg"
+                      src="/images/iconamoon_folder-add-thin.svg"
+                      alt="Add"
+                      style={{ width: "30px", height: "30px" }}
                       onClick={() => setModelOpenMediaDigest(true)}
                     />
                   </a>

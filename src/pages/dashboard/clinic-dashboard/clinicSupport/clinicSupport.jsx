@@ -74,7 +74,7 @@ setViewItem(true)
       <div class="rightContent rightsidefull">
         <div class="sortSearchArea">
           <div class="search">
-            <input type="search" placeholder="Search"/>
+            <input type="search" placeholder="Search" />
             <a href="#">
               <img src="../images/search-dark.svg" />
             </a>
@@ -82,13 +82,14 @@ setViewItem(true)
         </div>
 
         <div className="adminDetails padding-20 bg-white border-radius-20">
-            <a href="#" className="doctorsupportadd">
-                  <img
-                  width="40px"
-                    src="../images/folder.svg"
-                    onClick={() => setAddDoctorModel(true)}
-                  />
-                </a>
+          <a href="#" className="doctorsupportadd">
+            <img
+              src="/images/iconamoon_folder-add-thin.svg"
+              alt="Add"
+              style={{ width: "40px", height: "40px" }}
+              onClick={() => setAddDoctorModel(true)}
+            />
+          </a>
           <table className="doctoradmintable">
             <thead>
               <tr>
@@ -103,14 +104,14 @@ setViewItem(true)
                 adminList.map((items) => {
                   return (
                     <tr key={items.id}>
-                     <td>{items.title}</td>
+                      <td>{items.title}</td>
                       <td>
                         {items?.description}
                       </td>
                       <td>{items?.status}</td>
                       <td>
                         <div className="d-flex gap-2 align-items-center justify-content-center">
-                            <a
+                          <a
                             href="#"
                             className="tooltip2"
                             onClick={() => {
@@ -121,7 +122,7 @@ setViewItem(true)
                              <img src="../images/eye.webp" width="30px"/>
                           </a>
 
-                         
+
                           <a
                             href="#"
                             className="tooltip2"
@@ -161,9 +162,22 @@ setViewItem(true)
           </table>
         </div>
       </div>
-      <AddSupport addDoctorModel={addDoctorModel} setAddDoctorModel={setAddDoctorModel} fetchadminList={fetchadminList}/>
-      <EditSupport setEditDoctorModel={setEditDoctorModel} editDoctorModel={editDoctorModel} editSupportData={editSupportData} fetchadminList={fetchadminList}/>
-      <ViewDocumentSupport setViewItem={setViewItem} viewItem={viewItem} viewItemData={viewItemData}/>
+      <AddSupport
+        addDoctorModel={addDoctorModel}
+        setAddDoctorModel={setAddDoctorModel}
+        fetchadminList={fetchadminList}
+      />
+      <EditSupport
+        setEditDoctorModel={setEditDoctorModel}
+        editDoctorModel={editDoctorModel}
+        editSupportData={editSupportData}
+        fetchadminList={fetchadminList}
+      />
+      <ViewDocumentSupport
+        setViewItem={setViewItem}
+        viewItem={viewItem}
+        viewItemData={viewItemData}
+      />
     </>
   );
 };

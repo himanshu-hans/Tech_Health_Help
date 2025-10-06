@@ -380,7 +380,7 @@ const PatientEditProfile = () => {
                       </div>
                       <div class="col-md-12">
                         <div className="form-group d-flex align-item-center justify-content-between gap-2">
-                        <label>{t("edit-profile.phone-number")}</label>
+                          <label>{t("edit-profile.phone-number")}</label>
                           <div className="d-flex align-items-center  gap-2 mb-1">
                             <label className="mb-0">
                               {t("edit-profile.show-profile")}
@@ -495,11 +495,11 @@ const PatientEditProfile = () => {
                             control={control}
                             defaultValue={isProfiledata?.bio} // Ensuring bio is always initialized
                             render={({ field, fieldState: { error } }) => (
-                               <TextArea
-                              type="text"
-                              placeholder="Your text here..."
-                              {...field}
-                            />
+                              <TextArea
+                                type="text"
+                                placeholder="Your text here..."
+                                {...field}
+                              />
                             )}
                           />
                         </div>
@@ -542,7 +542,9 @@ const PatientEditProfile = () => {
                   <h3 class="docinfohead">{t("edit-profile.allergies")}</h3>
                   <a>
                     <img
-                      src="../images/folder.svg"
+                      src="/images/iconamoon_folder-add-thin.svg"
+                      alt="Add"
+                      style={{ width: "30px", height: "30px" }}
                       onClick={() => setUserAddOpenModel(true)}
                     />
                   </a>
@@ -553,41 +555,41 @@ const PatientEditProfile = () => {
                     allergieDetails?.slice( 0,
                       showAll ? allergieDetails?.length : 1
                     ).map((item) => (
-                      <div
-                        className="licenses border-gray allr mb-3"
-                        key={item.id}
-                      >
-                        <div className="form-group w-50 d-flex">
-                         {item?.name}
-                        </div>
-                        <div className="d-flex gap-3 w-50 d-flex">
+                        <div
+                          className="licenses border-gray allr mb-3"
+                          key={item.id}
+                        >
+                          <div className="form-group w-50 d-flex">
+                            {item?.name}
+                          </div>
+                          <div className="d-flex gap-3 w-50 d-flex">
                           <p className="mb-0">{t("edit-profile.document-link")}</p>{" "}
-                          <a
-                            href={item?.document_link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                           {t("edit-profile.click-here")}
-                          </a>
+                            <a
+                              href={item?.document_link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              {t("edit-profile.click-here")}
+                            </a>
+                          </div>
+                          <div className="d-flex align-items-center gap-3">
+                            <img
+                              src="../images/edit.svg"
+                              width="25"
+                              onClick={() => handleEditAllergieDetails(item)}
+                              alt="edit"
+                            />
+                            <img
+                              src="../images/delete.svg"
+                              width="25"
+                              alt="delete"
+                              onClick={() => removeAllergie(item)}
+                            />
+                          </div>
                         </div>
-                        <div className="d-flex align-items-center gap-3">
-                          <img
-                            src="../images/edit.svg"
-                            width="25"
-                            onClick={() => handleEditAllergieDetails(item)}
-                            alt="edit"
-                          />
-                          <img
-                            src="../images/delete.svg"
-                            width="25"
-                            alt="delete"
-                            onClick={() => removeAllergie(item)}
-                          />
-                        </div>
-                      </div>
                     )):(<div className="treatmentContainer">
                       <div className="no-appointments">
-                       {t("edit-profile.no-alergies")}
+                        {t("edit-profile.no-alergies")}
                       </div>
                     </div>)}
                 </div>
@@ -614,7 +616,9 @@ const PatientEditProfile = () => {
                   </h3>
                   <a>
                     <img
-                      src="../images/folder.svg"
+                      src="/images/iconamoon_folder-add-thin.svg"
+                      alt="Add"
+                      style={{ width: "30px", height: "30px" }}
                       onClick={() => setUserMedicalHistoryModel(true)}
                     />
                   </a>
@@ -623,42 +627,42 @@ const PatientEditProfile = () => {
                   {medicalDocumentDetails?.length > 0 ?
                     medicalDocumentDetails?.slice( 0,
                       showAllMedicalHistory ? allergieDetails?.length : 1)
-                    .map((item) => (
-                      <div
-                        className="licenses border-gray allr mb-3"
-                        key={item.id}
-                      >
-                        <div className="form-group w-50 d-flex">
-                          {item?.name}
-                        </div>
-                        <div className="d-flex gap-3 w-50 d-flex">
+                      .map((item) => (
+                        <div
+                          className="licenses border-gray allr mb-3"
+                          key={item.id}
+                        >
+                          <div className="form-group w-50 d-flex">
+                            {item?.name}
+                          </div>
+                          <div className="d-flex gap-3 w-50 d-flex">
                           <p className="mb-0">  {t("edit-profile.document-link")} </p>{" "}
-                          <a
-                            href={item?.document_link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                           {t("edit-profile.click-here")}
-                          </a>
+                            <a
+                              href={item?.document_link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              {t("edit-profile.click-here")}
+                            </a>
+                          </div>
+                          <div className="d-flex align-items-center gap-3">
+                            <img
+                              src="../images/edit.svg"
+                              width="25"
+                              onClick={() => handleMedicalDocumentDetails(item)}
+                              alt="edit"
+                            />
+                            <img
+                              src="../images/delete.svg"
+                              width="25"
+                              alt="delete"
+                              onClick={() => removeMedicalDocument(item)}
+                            />
+                          </div>
                         </div>
-                        <div className="d-flex align-items-center gap-3">
-                          <img
-                            src="../images/edit.svg"
-                            width="25"
-                            onClick={() => handleMedicalDocumentDetails(item)}
-                            alt="edit"
-                          />
-                          <img
-                            src="../images/delete.svg"
-                            width="25"
-                            alt="delete"
-                            onClick={() => removeMedicalDocument(item)}
-                          />
-                        </div>
-                      </div>
                     )): (<div className="treatmentContainer">
                       <div className="no-appointments">
-                       {t("edit-profile.no-medical")}
+                        {t("edit-profile.no-medical")}
                       </div>
                     </div>)}
                 </div>

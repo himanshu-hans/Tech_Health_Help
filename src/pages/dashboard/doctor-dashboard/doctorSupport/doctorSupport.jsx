@@ -85,8 +85,9 @@ const DoctorSupport = () => {
         <div className="adminDetails padding-20 bg-white border-radius-20">
           <div className="doctorsupportadd">
             <img
-              width="40px"
-              src="/images/downloaded-icon.svg"
+              src="/images/iconamoon_folder-add-thin.svg"
+              alt="Add"
+              style={{ width: "40px", height: "40px" }}
               onClick={() => setAddDoctorModel(true)}
             />
           </div>

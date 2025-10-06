@@ -83,17 +83,18 @@ setViewItem(true)
         </div>
 
         <div className="adminDetails padding-20 bg-white border-radius-20">
-            <div className="doctorsupportadd">
-                  <img
-                  width="40px"
-                    src="../images/folder.svg"
-                    onClick={() => setAddDoctorModel(true)}
-                  />
-                </div>
+          <div className="doctorsupportadd">
+            <img
+              src="/images/iconamoon_folder-add-thin.svg"
+              alt="Add"
+              style={{ width: "40px", height: "40px" }}
+              onClick={() => setAddDoctorModel(true)}
+            />
+          </div>
           <table className="doctoradmintable">
             <thead>
               <tr>
-            <th>{t("support.support-title")}</th>
+                <th>{t("support.support-title")}</th>
                 <th>{t("add-education.description")}</th>
                 <th> {t("wallet.status")}</th>
                 <th>{t("support.action")}</th>
@@ -104,14 +105,14 @@ setViewItem(true)
                 adminList.map((items) => {
                   return (
                     <tr key={items.id}>
-                     <td>{items.title}</td>
+                      <td>{items.title}</td>
                       <td>
                         {items?.description}
                       </td>
                       <td>{items?.status}</td>
                       <td>
                         <div className="d-flex gap-2 align-items-center justify-content-center">
-                            <div
+                          <div
                             className="tooltip2"
                             onClick={() => {
                               handleViewItem(items);
@@ -121,7 +122,7 @@ setViewItem(true)
                              <img src="../images/eye.webp" width="30px"/>
                           </div>
 
-                         
+
                           <div
                             className="tooltip2"
                             onClick={() => deleteAdmin(items)}
@@ -160,9 +161,22 @@ setViewItem(true)
           </table>
         </div>
       </div>
-      <AddSupport addDoctorModel={addDoctorModel} setAddDoctorModel={setAddDoctorModel} fetchadminList={fetchadminList}/>
-      <EditSupport setEditDoctorModel={setEditDoctorModel} editDoctorModel={editDoctorModel} editSupportData={editSupportData} fetchadminList={fetchadminList}/>
-      <ViewDocumentSupport setViewItem={setViewItem} viewItem={viewItem} viewItemData={viewItemData}/>
+      <AddSupport
+        addDoctorModel={addDoctorModel}
+        setAddDoctorModel={setAddDoctorModel}
+        fetchadminList={fetchadminList}
+      />
+      <EditSupport
+        setEditDoctorModel={setEditDoctorModel}
+        editDoctorModel={editDoctorModel}
+        editSupportData={editSupportData}
+        fetchadminList={fetchadminList}
+      />
+      <ViewDocumentSupport
+        setViewItem={setViewItem}
+        viewItem={viewItem}
+        viewItemData={viewItemData}
+      />
     </>
   );
 };
